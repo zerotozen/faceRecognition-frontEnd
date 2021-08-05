@@ -18,7 +18,6 @@ class Signin extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    // fetch("https://facerecognition-webpage.herokuapp.com/signin", {
     fetch("https://recognition-web-api.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },

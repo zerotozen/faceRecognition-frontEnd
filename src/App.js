@@ -79,7 +79,7 @@ class App extends React.Component {
 
   onPictureSubmit = () => {
     this.setState({ imageURL: this.state.input });
-    fetch("https://facerecognition-webpage.herokuapp.com/imageurl", {
+    fetch("https://recognition-web-api.herokuapp.com/register/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -89,7 +89,7 @@ class App extends React.Component {
       .then((response) => response.json())
       .then((response) => {
         if (response) {
-          fetch("https://facerecognition-webpage.herokuapp.com/image", {
+          fetch("https://recognition-web-api.herokuapp.com/register/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -105,12 +105,6 @@ class App extends React.Component {
       })
       .catch((err) => console.log(err));
   };
-
-  //function(response){
-  //this.calculateFaceLocation(response);
-  //},
-  //function(err){
-  //}
 
   onRouteChange = (route) => {
     if (route === "signout") {
